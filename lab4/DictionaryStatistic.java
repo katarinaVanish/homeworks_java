@@ -52,7 +52,9 @@ public class DictionaryStatistic {
 
     public void printSymbolsStat() {
         for (int i = 0; i < alphabet.length; i++) {
-            System.out.println(alphabet[i] + " - " + frequency[i]);
+            StringBuilder string = new StringBuilder();
+            string.append(alphabet[i]).append(" - ").append(frequency[i]);
+            System.out.println(string);
         }
     }
 

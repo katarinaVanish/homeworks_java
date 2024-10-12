@@ -37,9 +37,15 @@ public class Priest extends Player implements Healer {
     @Override
     public void heal(Player player){
         int lastHealth = player.getHealth();
-        player.increaseHealth(healPower);
-        System.out.printf("%s получил лечение от священника! Здоровье: %d --> %d%n",
-                player.getName(), lastHealth, player.getHealth());
+        if (lastHealth == 0){
+            System.out.println("Священник " + getName() + "пытается воскресить мертвого! Безуспешно...");
+        }
+        else {
+            player.increaseHealth(healPower);
+
+            System.out.printf("%s получил лечение от священника " + getName() + "! Здоровье: %d --> %d%n",
+                    player.getName(), lastHealth, player.getHealth());
+        }
     }
 
 }

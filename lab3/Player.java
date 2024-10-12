@@ -8,9 +8,6 @@ public abstract class Player {
     private int y;
     private boolean isAlife;
 
-    protected abstract void increaseHealth(int value);
-    protected abstract void decreaseHealth(int value);
-
     protected Player(String name, int x, int y){
         this.name = name;
         this.maxHealth = 100;
@@ -20,11 +17,22 @@ public abstract class Player {
         this.isAlife = true;
     }
 
+    protected abstract void increaseHealth(int value);
+    protected abstract void decreaseHealth(int value);
+
+    public void moveTo(int x, int y) {
+        setX(x);
+        setY(y);
+        System.out.println(name + " переместился на позицию (" + x + ", " + y + ")");
+    }
+
+    @Override
+    public String toString() {
+        return name + " | Здоровье: " + health + "/" + maxHealth + " | Позиция: (" + x + ", " + y + ") | Статус: " + (isAlife ? "жив" : "мертв");
+    }
+
     public String getName(){
         return name;
-    }
-    public void setName(String name){
-        this.name = name;
     }
     public int getHealth() {
         return health;

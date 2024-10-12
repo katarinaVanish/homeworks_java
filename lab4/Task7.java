@@ -2,18 +2,19 @@ package org.knit.lab4;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.StringJoiner;
 
 public class Task7 {
     public void execute() {
         try {
             Scanner scanner = new Scanner(new File("misc/dictionary.txt"));
-            StringBuilder sb = new StringBuilder();
+            StringJoiner sb = new StringJoiner(";");
             while (scanner.hasNext()) {
-                sb.append(scanner.nextLine()).append(" ");
+                sb.add(scanner.nextLine());
             }
             scanner.close();
 
-            String[] words = sb.toString().split("\\s+"); // все спец символы и пробелы
+            String[] words = sb.toString().split(";"); // все спец символы и пробелы
             StringBuilder string = new StringBuilder();
             for (char i='а'; i <= 'я'; i++){
                 string.append(i);
@@ -22,15 +23,15 @@ public class Task7 {
 
             DictionaryStatistic stats = new DictionaryStatistic(words, alphabet);
             System.out.print("Количество слов в словаре: ");
-            System.out.print(stats.getDictionarySize());
+            System.out.println(stats.getDictionarySize());
             System.out.print("Количество палиндромов: ");
-            System.out.print(stats.getPolindromCount());
+            System.out.println(stats.getPolindromCount());
             System.out.print("Максимальная длина слова: ");
-            System.out.print(stats.getMaxWordLength());
+            System.out.println(stats.getMaxWordLength());
             System.out.print("Минимальная длина слова: ");
-            System.out.print(stats.getMinWordLength());
+            System.out.println(stats.getMinWordLength());
             System.out.print("Случайное слово: ");
-            System.out.print(stats.getRandomWord());
+            System.out.println(stats.getRandomWord());
             System.out.println("\nЧастота букв в словаре:");
             stats.printSymbolsStat();
 

@@ -39,7 +39,7 @@ public class Warrior extends Player implements Attacker {
         int lastHealth = player.getHealth();
         player.decreaseHealth(attackPower);
         if (player.getAlife()){
-            System.out.printf("%s атакован воином! Здоровье: %d --> %d%n",
+            System.out.printf("%s атакован воином " + getName() + "! Здоровье: %d --> %d%n",
                     player.getName(), lastHealth, player.getHealth());
         } else {
             System.out.printf("%s убит атакой воина!%n",
