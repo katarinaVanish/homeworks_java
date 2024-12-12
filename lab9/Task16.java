@@ -5,7 +5,7 @@ public class Task16 {
         DIAMONDS("бубны"),
         HEARTS("червы"),
         SPADES("пики"),
-        CLUBS("трефы");
+        CLUBS("треф");
 
         private final String suitName;
 
@@ -15,11 +15,25 @@ public class Task16 {
     }
 
     enum Rank{
-        DIGIT(),
-        JACK,
-        QUEEN,
-        KING,
-        ACE;
+        TWO("двойка"), THREE("тройка"), FOUR("четверка"), FIVE("пятерка"),
+        SIX("шестерка"), SEVEN("семерка"), EIGHT("восьмерка"), NINE("девятка"), TEN("десятка"),
+        JACK("валет"),
+        QUEEN("дама"),
+        KING("король"),
+        ACE("туз");
 
+        private final String rankName;
+
+        Rank(String rankName){
+            this.rankName = rankName;
+        }
+    }
+
+    public static void main(String[] args){
+        for (Suit suit : Suit.values()){
+            for (Rank rank : Rank.values()) {
+                System.out.println(rank.rankName + " " + suit.suitName);
+            }
+        }
     }
 }
