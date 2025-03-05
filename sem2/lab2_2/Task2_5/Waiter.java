@@ -12,7 +12,7 @@ class Waiter extends Thread {
         while (true) {
             restaurant.serve();
             try {
-                Thread.sleep(3000); // Время подачи блюда
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
