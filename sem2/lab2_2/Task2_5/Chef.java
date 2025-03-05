@@ -16,7 +16,7 @@ class Chef extends Thread {
         while (true) {
             restaurant.cook("Блюдо " + dishNumber++);
             try {
-                Thread.sleep(1000 + random.nextInt(2000)); // Время приготовления блюда варьируется
+                Thread.sleep(1000 + random.nextInt(2000));
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
