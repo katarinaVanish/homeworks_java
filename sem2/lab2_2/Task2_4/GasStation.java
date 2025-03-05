@@ -21,7 +21,7 @@ class GasStation {
         availablePumps--;
         System.out.println(car.getName() + " начал заправку.");
         try {
-            Thread.sleep(2000); // Симуляция процесса заправки
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
