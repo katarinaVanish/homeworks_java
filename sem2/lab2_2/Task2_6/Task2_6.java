@@ -11,7 +11,7 @@ public class Task2_6 {
         while (true) {
             new Car("Машина " + carNumber++, crossing).start();
             try {
-                Thread.sleep(2000 + random.nextInt(3000)); // Рандомная задержка перед появлением новой машины
+                Thread.sleep(2000 + random.nextInt(3000)); // задержка
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
