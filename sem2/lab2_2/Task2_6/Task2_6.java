@@ -2,6 +2,13 @@ package org.knit.sem2.lab2_2.Task2_6;
 
 import java.util.Random;
 
+@TaskDescription(6, "Железнодорожный переезд");
+/*
+Есть автомобили и поезд.
+- Если поезд приближается, машины останавливаются и ждут.
+- После того, как поезд проедет, машины продолжают движение.
+*/
+
 public class Task2_6 {
     public static void main(String[] args) {
         RailwayCrossing crossing = new RailwayCrossing();
