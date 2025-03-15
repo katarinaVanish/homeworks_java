@@ -2,6 +2,13 @@ package org.knit.sem2.lab2_2.Task2_5;
 
 import java.util.Random;
 
+@TaskDescription(5, "Ресторан: Повар и Официант");
+/*
+В ресторане работает один повар и один официант.
+- Повар готовит блюда и ставит их на поднос (максимум 3 блюда).
+- Официант берет готовые блюда и подает их клиентам.
+*/
+
 public class Task2_5 {
     public static void main(String[] args) {
         Restaurant restaurant = new Restaurant();
